@@ -145,9 +145,8 @@
 
         */
 
-       select sname,cname,grade
-       from stu,sc,cou
-        where sc.sno=stu.sno and sc.cno=cou.cno and <![CDATA[grade<60]]>
+        select sname,grade from stu right join sc on stu.sno=sc.sno
+
 
 
 
