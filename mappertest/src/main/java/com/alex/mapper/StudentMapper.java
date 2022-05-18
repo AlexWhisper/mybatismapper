@@ -56,5 +56,6 @@ public interface StudentMapper {
 
     List<sc> ba60();
 
-    List<sc> b();
+
+    void insc(sc s1);
 }

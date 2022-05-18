@@ -1,9 +1,11 @@
 package com.alex.pojo;
 
+import java.math.BigDecimal;
+
 public class sc {
     private String sno;
     private String cno;
-    private String grade;
+    private double grade;
 
     public String getSno() {
         return sno;
@@ -21,11 +23,11 @@ public class sc {
         this.cno = cno;
     }
 
-    public String getGrade() {
+    public double getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(double grade) {
         this.grade = grade;
     }
 
@@ -34,7 +36,7 @@ public class sc {
         return "sc{" +
                 "sno='" + sno + '\'' +
                 ", cno='" + cno + '\'' +
-                ", grade='" + grade + '\'' +
+                ", grade=" + grade +
                 '}';
     }
 }

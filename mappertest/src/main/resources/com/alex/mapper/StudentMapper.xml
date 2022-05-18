@@ -12,6 +12,9 @@
         phone,
         addr) values (#{name},#{age},#{classes},#{gender},#{phone},#{addr})
     </insert>
+    <insert id="insc">
+        INSERT INTO sc VALUE(#{sno},#{cno},#{grade})
+    </insert>
 
 
     <select id="selectById" resultType="com.alex.pojo.Student" parameterType="int">
@@ -108,7 +111,7 @@
         <result property="sname" column="sname" ></result>
         <result property="grade" column="grade" ></result>
     </resultMap>
-    <select id="b" resultType="com.alex.pojo.b">
+    <select id="b" resultType="com.alex.pojo.stu">
         /* select  cname
          from cou,sc where cou.cno=sc.cno
          group by sc.cno
@@ -141,12 +144,13 @@
         where s.sno=stu.sno
         order by grade desc limit 3;
 
+   select dname,count(sno)
+        from depart d left join stu on stu.did= d.did
+        group by d.did
+
 
 
         */
-
-        select sname,grade from stu right join sc on stu.sno=sc.sno
-
 
 
 

@@ -18,7 +18,7 @@ public class test {
         String resource="mybatis-config.xml";
         InputStream in = Resources.getResourceAsStream(resource);
         SqlSessionFactory ssf=new SqlSessionFactoryBuilder().build(in);
-        SqlSession sqlsession=ssf.openSession();
+        SqlSession sqlsession=ssf.openSession(true);
         StudentMapper studentMapper=sqlsession.getMapper(StudentMapper.class);
 //        Student stu=studentMapper.selectById(2);
         //System.out.println(stu);
@@ -53,16 +53,15 @@ public class test {
 //        List<sc> list = studentMapper.t1f2("s001","s003");
 //        List<sc> list=studentMapper.cnogradeb60();
 //        List<sc> list=studentMapper.ba60();
-        List<sc> list1=studentMapper.b();
+//        List<sc> list1=studentMapper.b();
+        sc s1=new sc();
+        s1.setSno("s010");
+        s1.setCno("c003");
+        s1.setGrade(90);
+        studentMapper.insc(s1);
+        sqlsession.close();
 
-
-
-
-
-
-            System.out.println(list1);
-
-
+//            System.out.println(list1);
 
     }
 }
